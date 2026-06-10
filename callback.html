@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connecting — AstroClipz</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--ink:#0B0D12;--panel:#12151D;--line:#232836;--text:#E8EAF0;--muted:#8A91A3;--rec:#FF3B30}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;max-width:520px;width:100%;padding:36px}
+  .wordmark{font-weight:800;letter-spacing:.06em;font-size:14px;text-transform:uppercase;margin-bottom:20px}
+  .wordmark span{color:var(--rec)}
+  h1{font-size:20px;font-weight:700;margin-bottom:10px}
+  p{color:var(--muted);font-size:15px;margin-bottom:14px}
+  code{display:block;background:var(--ink);border:1px solid var(--line);border-radius:6px;padding:12px;font-size:13px;word-break:break-all;color:var(--text);user-select:all}
+  #manual{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="wordmark">AstroClip<span>z</span></div>
+  <div id="forwarding">
+    <h1>Connecting your account…</h1>
+    <p>Sending you back to the AstroClipz app on this computer.</p>
+  </div>
+  <div id="manual">
+    <h1>Finish connecting</h1>
+    <p>The AstroClipz app doesn't appear to be running on this computer. Start it, then copy this authorization code into the app:</p>
+    <code id="codebox">—</code>
+    <p style="margin-top:14px;font-size:13px">This code is single-use and expires quickly. If it expires, just start the connection again from the app.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var qs = window.location.search || "";
+  var local = "http://localhost:8000/auth/tiktok/callback" + qs;
+  var params = new URLSearchParams(qs);
+  var code = params.get("code");
+  // Try to hand off to the locally running app.
+  fetch("http://localhost:8000/health", {mode:"no-cors"}).then(function(){
+    window.location.replace(local);
+  }).catch(showManual);
+  // Fallback if fetch never resolves quickly.
+  var t = setTimeout(showManual, 2500);
+  function showManual(){
+    clearTimeout(t);
+    if (document.getElementById("manual").style.display === "block") return;
+    document.getElementById("forwarding").style.display = "none";
+    document.getElementById("manual").style.display = "block";
+    document.getElementById("codebox").textContent = code || "No code found in the URL — restart the connection from the app.";
+  }
+})();
+</script>
+</body>
+</html>
