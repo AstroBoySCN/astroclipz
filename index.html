@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstroClipz — clip publishing tool</title>
+<meta name="description" content="AstroClipz is a personal tool for reviewing, editing and publishing short-form livestream clips to AstroClipz's own social accounts.">
+<style>
+  :root{
+    --ink:#0B0D12;        /* page background */
+    --panel:#12151D;      /* card background */
+    --line:#232836;       /* hairlines */
+    --text:#E8EAF0;       /* body text */
+    --muted:#8A91A3;      /* secondary text */
+    --rec:#FF3B30;        /* record red */
+    --frame:#3D4458;      /* viewfinder brackets */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{animation:none!important;transition:none!important}
+  }
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{padding:28px 0;border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between}
+  .wordmark{font-weight:800;letter-spacing:.06em;font-size:15px;text-transform:uppercase;color:var(--text);text-decoration:none}
+  .wordmark .z{color:var(--rec)}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:24px}
+  nav a:hover,nav a:focus-visible{color:var(--text)}
+  a:focus-visible{outline:2px solid var(--rec);outline-offset:3px;border-radius:2px}
+
+  /* hero — viewfinder signature */
+  .hero{padding:96px 0 72px;text-align:center}
+  .finder{
+    position:relative;display:inline-block;padding:40px 56px;
+  }
+  .finder::before,.finder::after,
+  .finder .b::before,.finder .b::after{
+    content:"";position:absolute;width:26px;height:26px;border-color:var(--frame);border-style:solid;border-width:0;
+  }
+  .finder::before{top:0;left:0;border-top-width:2px;border-left-width:2px}
+  .finder::after{top:0;right:0;border-top-width:2px;border-right-width:2px}
+  .finder .b::before{bottom:0;left:0;border-bottom-width:2px;border-left-width:2px}
+  .finder .b::after{bottom:0;right:0;border-bottom-width:2px;border-right-width:2px}
+  .rec{
+    position:absolute;top:14px;right:18px;display:flex;align-items:center;gap:7px;
+    font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:600;
+  }
+  .rec i{width:9px;height:9px;border-radius:50%;background:var(--rec);display:inline-block;animation:blink 1.6s ease-in-out infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  h1{
+    font-size:clamp(40px,7.5vw,72px);
+    font-weight:800;letter-spacing:-.02em;line-height:1.05;
+  }
+  h1 .z{color:var(--rec)}
+  .tagline{margin-top:22px;color:var(--muted);font-size:18px;max-width:560px;margin-left:auto;margin-right:auto}
+
+  /* what it does */
+  .panel{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:32px;margin:8px 0 64px;
+  }
+  .panel h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:700}
+  .steps{list-style:none}
+  .steps li{
+    display:flex;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:16px;color:var(--text);
+  }
+  .steps li:first-child{border-top:none}
+  .steps .k{color:var(--rec);font-weight:700;min-width:74px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
+  .steps p{color:var(--muted)}
+  .steps p strong{color:var(--text);font-weight:600}
+  .note{
+    margin-top:22px;padding-top:18px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:14px;
+  }
+  .note strong{color:var(--text)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+  footer a{color:var(--muted)}
+  footer a:hover,footer a:focus-visible{color:var(--text)}
+  @media(max-width:560px){
+    .hero{padding:64px 0 48px}
+    .finder{padding:32px 20px}
+    nav a{margin-left:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="./index.html">AstroClip<span class="z">z</span></a>
+    <nav>
+      <a href="./terms.html">Terms of Service</a>
+      <a href="./privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="finder">
+      <span class="b"></span>
+      <span class="rec"><i></i>REC</span>
+      <h1>AstroClip<span class="z">z</span></h1>
+    </div>
+    <p class="tagline">A personal publishing tool for turning livestream moments into short-form clips — reviewed, edited and approved by a human before anything is posted.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="panel">
+      <h2>How it works</h2>
+      <ul class="steps">
+        <li>
+          <span class="k">Capture</span>
+          <p>The tool watches livestreams that AstroClipz has <strong>written permission</strong> to clip and flags high-engagement moments.</p>
+        </li>
+        <li>
+          <span class="k">Review</span>
+          <p>Every clip lands in a private review queue. The operator trims it, edits the title, captions and subtitles, and decides whether it should exist at all.</p>
+        </li>
+        <li>
+          <span class="k">Approve</span>
+          <p><strong>Nothing is posted automatically.</strong> Each clip is individually approved before it is uploaded.</p>
+        </li>
+        <li>
+          <span class="k">Publish</span>
+          <p>Approved clips are uploaded to AstroClipz's own social media accounts using the platforms' official APIs.</p>
+        </li>
+      </ul>
+      <p class="note"><strong>Scope of this tool:</strong> AstroClipz is operated by its developer to publish to accounts the developer owns and has connected. It is not offered as a product or service to third parties, and it does not access other users' data.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 AstroClipz</span>
+    <span>
+      <a href="./terms.html">Terms of Service</a> &nbsp;·&nbsp;
+      <a href="./privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="mailto:astroclipz06@gmail.com">astroclipz06@gmail.com</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
