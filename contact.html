@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — AstroClipz</title>
+<meta name="description" content="Get in touch with AstroClipz — general enquiries, clipping campaigns and partnerships, or rights-holder questions about a clip.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0b'/%3E%3Ctext x='16' y='23' font-family='Outfit,sans-serif' font-size='20' font-weight='800' text-anchor='middle' fill='%23fafafa'%3Ea%3Ctspan fill='%23ff2d2d'%3Ez%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="./styles.css">
+<style>
+  .field { margin-bottom: 16px; }
+  .field label { display:block; font-size:14px; color:var(--text-muted); margin-bottom:7px; font-weight:600; }
+  .field input, .field textarea {
+    width:100%; background:var(--raised); border:1px solid var(--border-strong);
+    border-radius:10px; padding:12px 14px; color:var(--text); font:inherit; font-size:15px;
+  }
+  .field textarea { min-height:130px; resize:vertical; }
+  .field input:focus, .field textarea:focus { outline:2px solid var(--red); outline-offset:1px; border-color:transparent; }
+  .form-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px; max-width:560px; }
+  .form-note { color:var(--text-dim); font-size:13px; margin-top:12px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./index.html" aria-label="AstroClipz home">
+      <svg viewBox="0 0 232 48" role="img" aria-label="AstroClipz" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 15 L2 2 L15 2"/><path d="M217 2 L230 2 L230 15"/>
+          <path d="M2 33 L2 46 L15 46"/><path d="M217 46 L230 46 L230 33"/>
+        </g>
+        <text x="18" y="32" font-family="Outfit, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.4">
+          <tspan fill="var(--text)">AstroClip</tspan><tspan fill="var(--red)">z</tspan>
+        </text>
+        <circle cx="178" cy="23" r="4" fill="var(--red)"/>
+        <text x="187" y="27" font-family="Fira Code, monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="var(--red)">REC</text>
+      </svg>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="./index.html">Home</a>
+      <a href="./features.html">Features</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html" class="active">Contact</a>
+      <a href="./contact.html" class="cta">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">Contact</div>
+      <div class="prose">
+        <h1 class="font-display">Get in touch</h1>
+        <p>Questions about AstroClipz, a clipping campaign, or a clip you're featured in? Reach out — email is the fastest way, and we aim to reply within a couple of business days.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:16px">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>General enquiries</h3>
+          <p>Questions about what AstroClipz does or how it works.</p>
+          <a class="mail" href="mailto:astroclipz06@gmail.com?subject=AstroClipz%20enquiry">astroclipz06@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <h3>Campaigns &amp; partnerships</h3>
+          <p>Clipping campaigns, collaborations, or working together.</p>
+          <a class="mail" href="mailto:astroclipz06@gmail.com?subject=AstroClipz%20partnership">astroclipz06@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <h3>Rights holders</h3>
+          <p>A creator or rights holder with a question about a clip.</p>
+          <a class="mail" href="mailto:astroclipz06@gmail.com?subject=AstroClipz%20rights%20enquiry">astroclipz06@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:28px">
+        <div class="kicker">Send a message</div>
+        <h2 class="font-display">Drop us a line</h2>
+        <p>This opens a pre-filled email in your own mail app — nothing is stored on this site.</p>
+      </div>
+      <form class="form-card" onsubmit="return sendMail(event)">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="from">Your email</label>
+          <input id="from" name="from" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="msg" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Open email</button>
+        <p class="form-note">Prefer to write directly? Email <a href="mailto:astroclipz06@gmail.com" style="color:var(--red)">astroclipz06@gmail.com</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <svg viewBox="0 0 232 48" role="img" aria-label="AstroClipz" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 15 L2 2 L15 2"/><path d="M217 2 L230 2 L230 15"/>
+            <path d="M2 33 L2 46 L15 46"/><path d="M217 46 L230 46 L230 33"/>
+          </g>
+          <text x="18" y="32" font-family="Outfit, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.4">
+            <tspan fill="var(--text)">AstroClip</tspan><tspan fill="var(--red)">z</tspan>
+          </text>
+          <circle cx="178" cy="23" r="4" fill="var(--red)"/>
+          <text x="187" y="27" font-family="Fira Code, monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="var(--red)">REC</text>
+        </svg>
+        <p>Automated creation and publishing of short-form video clips for TikTok, Shorts and Reels — with a human approving every post.</p>
+      </div>
+      <div class="footer-nav">
+        <div>
+          <h4>Product</h4>
+          <a href="./index.html">Home</a>
+          <a href="./features.html">Features</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="./terms.html">Terms of Service</a>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="mailto:astroclipz06@gmail.com">Email us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AstroClipz</span>
+      <span class="mono">astroclipz06@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function sendMail(e){
+    e.preventDefault();
+    var name = encodeURIComponent(document.getElementById('name').value);
+    var from = encodeURIComponent(document.getElementById('from').value);
+    var msg  = encodeURIComponent(document.getElementById('msg').value);
+    var body = "From: " + decodeURIComponent(name) + " (" + decodeURIComponent(from) + ")%0D%0A%0D%0A" + msg;
+    window.location.href = "mailto:astroclipz06@gmail.com?subject=" +
+      encodeURIComponent("AstroClipz message from " + decodeURIComponent(name)) +
+      "&body=" + body;
+    return false;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features &amp; how it works — AstroClipz</title>
+<meta name="description" content="How AstroClipz works, step by step — from live capture and automatic moment detection to vertical formatting, captions, branding, review and publishing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0b'/%3E%3Ctext x='16' y='23' font-family='Outfit,sans-serif' font-size='20' font-weight='800' text-anchor='middle' fill='%23fafafa'%3Ea%3Ctspan fill='%23ff2d2d'%3Ez%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./index.html" aria-label="AstroClipz home">
+      <svg viewBox="0 0 232 48" role="img" aria-label="AstroClipz" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 15 L2 2 L15 2"/><path d="M217 2 L230 2 L230 15"/>
+          <path d="M2 33 L2 46 L15 46"/><path d="M217 46 L230 46 L230 33"/>
+        </g>
+        <text x="18" y="32" font-family="Outfit, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.4">
+          <tspan fill="var(--text)">AstroClip</tspan><tspan fill="var(--red)">z</tspan>
+        </text>
+        <circle cx="178" cy="23" r="4" fill="var(--red)"/>
+        <text x="187" y="27" font-family="Fira Code, monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="var(--red)">REC</text>
+      </svg>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="./index.html">Home</a>
+      <a href="./features.html" class="active">Features</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./contact.html" class="cta">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">Features &amp; how it works</div>
+      <div class="prose">
+        <h1 class="font-display">The whole clip pipeline, explained</h1>
+        <p>AstroClipz automates the repetitive work between a livestream moment and a posted clip. Here's what happens at each stage, and the features that power it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage-by-stage -->
+  <section style="padding-top:40px">
+    <div class="wrap">
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <div>
+            <h3>Continuous capture</h3>
+            <p>AstroClipz keeps a rolling buffer of the live stream — always recording the recent past so a moment can be clipped the instant it happens, without recording hours of footage you'll never use. Only a short recent window is kept on disk at any time, and it's continuously cleaned up.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <div>
+            <h3>Automatic moment detection</h3>
+            <p>Instead of watching for hours, AstroClipz reads the room. It measures live chat velocity and engagement in real time and, when a moment spikes past a threshold tuned per streamer, marks that window for clipping. A quick calibration step learns each channel's normal chat baseline so busy chats and quiet ones are both handled sensibly.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <div>
+            <h3>Vertical formatting</h3>
+            <p>Landscape gameplay doesn't belong on a vertical feed. AstroClipz scales the footage into a 9:16 canvas over a clean black or blurred-fill background, and burns in an editable headline placed exactly where you want it — the packaging that makes a clip feel native to TikTok, Shorts and Reels.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <div>
+            <h3>Word-by-word captions</h3>
+            <p>Speech is transcribed automatically and rendered as animated, word-by-word captions. The transcript is fully editable, so you can fix a word or reposition the caption block, then the captions are burned cleanly into the final render — the retention feature short-form audiences expect.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">05</div>
+          <div>
+            <h3>Branding your way</h3>
+            <p>Each clip can carry a platform lockup with the source handle, a custom campaign watermark you upload, or no branding at all. Position, size and opacity are set per clip, so a client campaign and an unbranded post can come off the same pipeline.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">06</div>
+          <div>
+            <h3>Human review &amp; approval</h3>
+            <p>Every finished clip lands in a private review queue in a mobile-friendly app. You watch it, fine-tune the trim, edit the caption and hashtags, and either approve or reject. <strong>Nothing is ever posted automatically</strong> — a person signs off on every single clip.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">07</div>
+          <div>
+            <h3>Publish through official APIs</h3>
+            <p>Approved clips upload straight to connected accounts through each platform's official posting API — starting with the TikTok Content Posting API — with the caption and hashtags you set. Accounts are connected only through the platform's own secure authorisation flow and can be disconnected at any time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature grid recap -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">At a glance</div>
+        <h2 class="font-display">What you get</h2>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>9:16 render engine</h3><p>Consistent vertical output with headline, background fill and branding composited in a single pass.</p></div>
+        <div class="card"><h3>Auto-captions</h3><p>Editable, word-by-word subtitles transcribed from the clip's audio.</p></div>
+        <div class="card"><h3>Per-streamer tuning</h3><p>Calibration learns each channel's chat baseline so detection stays accurate across audiences.</p></div>
+        <div class="card"><h3>Mobile review app</h3><p>Clear the queue, edit captions and approve clips from your phone.</p></div>
+        <div class="card"><h3>Official-API publishing</h3><p>Direct posting through platform APIs — no screen-recording or manual re-upload.</p></div>
+        <div class="card"><h3>Human-in-the-loop</h3><p>Approval is required on every clip; nothing auto-posts.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="wrap">
+      <h2 class="font-display">Want to know more?</h2>
+      <p>Read about the thinking behind AstroClipz, or reach out with a question.</p>
+      <div class="actions" style="justify-content:center">
+        <a class="btn btn-primary" href="./about.html">About AstroClipz</a>
+        <a class="btn btn-ghost" href="./contact.html">Contact</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <svg viewBox="0 0 232 48" role="img" aria-label="AstroClipz" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 15 L2 2 L15 2"/><path d="M217 2 L230 2 L230 15"/>
+            <path d="M2 33 L2 46 L15 46"/><path d="M217 46 L230 46 L230 33"/>
+          </g>
+          <text x="18" y="32" font-family="Outfit, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.4">
+            <tspan fill="var(--text)">AstroClip</tspan><tspan fill="var(--red)">z</tspan>
+          </text>
+          <circle cx="178" cy="23" r="4" fill="var(--red)"/>
+          <text x="187" y="27" font-family="Fira Code, monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="var(--red)">REC</text>
+        </svg>
+        <p>Automated creation and publishing of short-form video clips for TikTok, Shorts and Reels — with a human approving every post.</p>
+      </div>
+      <div class="footer-nav">
+        <div>
+          <h4>Product</h4>
+          <a href="./index.html">Home</a>
+          <a href="./features.html">Features</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="./terms.html">Terms of Service</a>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="mailto:astroclipz06@gmail.com">Email us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AstroClipz</span>
+      <span class="mono">astroclipz06@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

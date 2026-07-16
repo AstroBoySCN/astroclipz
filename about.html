@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — AstroClipz</title>
+<meta name="description" content="About AstroClipz — what it is, who it's for, and the human-in-the-loop, permission-first approach behind automated short-form clipping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0b'/%3E%3Ctext x='16' y='23' font-family='Outfit,sans-serif' font-size='20' font-weight='800' text-anchor='middle' fill='%23fafafa'%3Ea%3Ctspan fill='%23ff2d2d'%3Ez%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./index.html" aria-label="AstroClipz home">
+      <svg viewBox="0 0 232 48" role="img" aria-label="AstroClipz" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 15 L2 2 L15 2"/><path d="M217 2 L230 2 L230 15"/>
+          <path d="M2 33 L2 46 L15 46"/><path d="M217 46 L230 46 L230 33"/>
+        </g>
+        <text x="18" y="32" font-family="Outfit, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.4">
+          <tspan fill="var(--text)">AstroClip</tspan><tspan fill="var(--red)">z</tspan>
+        </text>
+        <circle cx="178" cy="23" r="4" fill="var(--red)"/>
+        <text x="187" y="27" font-family="Fira Code, monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="var(--red)">REC</text>
+      </svg>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="./index.html">Home</a>
+      <a href="./features.html">Features</a>
+      <a href="./about.html" class="active">About</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./contact.html" class="cta">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">About</div>
+      <div class="prose">
+        <h1 class="font-display">Clipping, without the busywork</h1>
+        <p>AstroClipz started with a simple frustration: the best moments in a livestream are obvious the second they happen, but turning one into a clip that's ready to post takes far longer than it should. Watch the whole stream, find the moment, cut it, reframe it, caption it, brand it, export it, upload it — over and over, for every clip.</p>
+        <p>AstroClipz automates that pipeline end to end, while keeping a person in charge of what actually gets published.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:24px">
+    <div class="wrap">
+      <div class="prose">
+        <h2>What AstroClipz does</h2>
+        <p>AstroClipz captures livestream moments, edits and formats them for vertical short-form video — TikTok, YouTube Shorts and Instagram Reels — and streamlines the workflow of reviewing and posting them. It brings the recorder, editor, captioner, brander and uploader into one tool so a clip goes from live moment to posted video with as little manual work as possible.</p>
+
+        <h2>Who it's for</h2>
+        <p>It's built for the people who live in short-form: creators repurposing their own streams, clippers running channels around a streamer, and campaigns that need a steady flow of well-formatted clips. Anyone whose day involves cutting the same kind of vertical clip again and again is who AstroClipz is designed to help.</p>
+
+        <h2>How we think about it</h2>
+        <ul>
+          <li><strong>Human-in-the-loop, always.</strong> Automation handles the tedious work — detection, cutting, formatting, captioning — but a person reviews and approves every clip before it's posted. Nothing publishes on its own.</li>
+          <li><strong>Permission-first.</strong> AstroClipz only processes footage it's authorised to use, whether granted directly by a creator or licensed through an official clipping campaign. Clips are creatively transformed, not re-uploaded unchanged.</li>
+          <li><strong>Official channels only.</strong> Accounts are connected through each platform's own secure authorisation flow, and posting happens through official platform APIs — never by working around them.</li>
+          <li><strong>Minimal data.</strong> The tool is built to handle as little personal data as possible and to keep credentials secure. See the <a href="./privacy.html">Privacy Policy</a> for the details.</li>
+        </ul>
+
+        <h2>Where it is today</h2>
+        <p>AstroClipz is actively developed and operated by an independent developer. The core pipeline — capture, detection, vertical rendering, captions, branding, review and publishing to TikTok — is built and in use on the developer's own connected accounts. Support for more platforms and a broader rollout are on the roadmap.</p>
+
+        <p style="margin-top:28px">Questions, or want to talk about a clipping campaign? <a href="./contact.html">Get in touch</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip band">
+    <div class="wrap">
+      <h2 class="font-display">See the pipeline in detail</h2>
+      <p>Walk through each stage, from capture to publish.</p>
+      <div class="actions" style="justify-content:center">
+        <a class="btn btn-primary" href="./features.html">Features &amp; how it works</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="about">
+        <svg viewBox="0 0 232 48" role="img" aria-label="AstroClipz" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 15 L2 2 L15 2"/><path d="M217 2 L230 2 L230 15"/>
+            <path d="M2 33 L2 46 L15 46"/><path d="M217 46 L230 46 L230 33"/>
+          </g>
+          <text x="18" y="32" font-family="Outfit, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.4">
+            <tspan fill="var(--text)">AstroClip</tspan><tspan fill="var(--red)">z</tspan>
+          </text>
+          <circle cx="178" cy="23" r="4" fill="var(--red)"/>
+          <text x="187" y="27" font-family="Fira Code, monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="var(--red)">REC</text>
+        </svg>
+        <p>Automated creation and publishing of short-form video clips for TikTok, Shorts and Reels — with a human approving every post.</p>
+      </div>
+      <div class="footer-nav">
+        <div>
+          <h4>Product</h4>
+          <a href="./index.html">Home</a>
+          <a href="./features.html">Features</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="./terms.html">Terms of Service</a>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="mailto:astroclipz06@gmail.com">Email us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AstroClipz</span>
+      <span class="mono">astroclipz06@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
